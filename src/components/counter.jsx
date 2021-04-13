@@ -58,3 +58,6 @@ export default class Counter extends Component {
     return classes;
   }
 }
+
+// There are no movies in the database.
+// Showing 8 movies in the database.
