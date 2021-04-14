@@ -1,13 +1,25 @@
 import React, { Component } from "react";
 
 export default class Counter extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      // Ajax call and get new data from the server
+    }
+  }
+
+  componentWillUnmount() {
+    console.log("Counter - Unmount");
+  }
+
   formatCount = () => {
     const { value } = this.props.counter;
     return value === 0 ? "Zero" : value;
   };
 
   render() {
-    console.log("props", this.props);
+    console.log("Counter - Rendered");
     return (
       <div>
         <h4>Counter #{this.props.id}</h4>
